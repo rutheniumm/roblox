@@ -1,11 +1,10 @@
-local Module = {}
 local HttpService = game:GetService("HttpService")
+local Loader = {}
 
+Loader.import = function(index)
+	pcall(function()
+		return loadstring(HttpService:GetAsync(string.format("https://raw.githubusercontent.com/rutheniumm/roblox/main/%s", index)))();
+	end)
+end
 
-setmetatable(Module, {__index = function(tbl, index, value)
-pcall(function()
-return loadstring(HttpService:GetAsync(string.format("https://raw.githubusercontent.com/rutheniumm/roblox/main/%s", index)))();
-end)
-end})  
-
-return Module;
+return Loader 
