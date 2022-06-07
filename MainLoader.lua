@@ -1,1 +1,0 @@
-local data = 4
