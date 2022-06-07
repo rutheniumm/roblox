@@ -1,11 +1,10 @@
 local Module = {}
 local HttpService = game:GetService("HttpService")
 
-local SubModules = {["FastCastRedux"] = 'https://raw.githubusercontent.com/rutheniumm/roblox/main/FastCastRedux.lua'}
 
 setmetatable(Module, {__index = function(tbl, index, value)
 pcall(function()
-return loadstring(HttpService:GetAsync(SubModules[index]))()
+return loadstring(HttpService:GetAsync(string.format("https://raw.githubusercontent.com/rutheniumm/roblox/main/%s", index))()
 end)
 end})  
 
