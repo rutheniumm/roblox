@@ -204,4 +204,4 @@ function module:New(inst,asset,size)
 	return tools
 end
 
-return
+return module
